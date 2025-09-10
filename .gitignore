@@ -1,19 +1,27 @@
-# Python
+# Virtual environments
+venv/
+.venv/
+api/.venv/
+
+# Python cache
 __pycache__/
 *.pyc
 *.pyo
 *.pyd
-.venv/
-venv/
-env/
+
+# OS / Editor files
+.DS_Store
+*.swp
+*.swo
+
+# Environment / secrets
+.env
 *.env
 
-# Node
-node_modules/
-dist/
-.build/
+# Jupyter / notebooks
+.ipynb_checkpoints/
 
-# OS/editor
-.DS_Store
-*.log
-.vscode/
+# Node (for frontend trustlens-ui)
+trustlens-ui/node_modules/
+trustlens-ui/.next/
+trustlens-ui/dist/
