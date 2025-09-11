@@ -25,3 +25,9 @@ def trigger_alert(source: str = "csv", null_threshold: float = 0.2, minutes_thre
         return {"alerts": alerts, "slack": "sent"}
     else:
         return {"alerts": [], "status": "all good ✅"}
+
+# NEW: Slack test endpoint
+@router.post("/test")
+def test_alert():
+    send_slack_alert("🚨 Test alert from TrustLens API")
+    return {"status": "sent", "message": "Test alert pushed to Slack"}

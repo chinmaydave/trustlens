@@ -1,11 +1,14 @@
-import requests
 import os
+import requests
+from dotenv import load_dotenv
 
-SLACK_WEBHOOK_URL = os.getenv("SLACK_WEBHOOK_URL")
+load_dotenv()
+
+WEBHOOK_URL = os.getenv("SLACK_WEBHOOK_URL")
 
 def send_slack_alert(message: str):
-    if not SLACK_WEBHOOK_URL:
-        return {"error": "No Slack webhook configured"}
+    if not WEBHOOK_URL:
+        print("⚠️ No Slack webhook configured")
+        return
     payload = {"text": message}
-    response = requests.post(SLACK_WEBHOOK_URL, json=payload)
-    return {"status": response.status_code}
+    requests.post(WEBHOOK_URL, json=payload)
