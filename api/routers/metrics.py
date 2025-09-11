@@ -1,6 +1,6 @@
 from fastapi import APIRouter
-from services.metrics_service import compute_metrics
-from routers.ingest import DATASTORE
+from api.services.metrics_service import compute_metrics
+from api.routers.ingest import DATASTORE
 
 router = APIRouter()
 

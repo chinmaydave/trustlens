@@ -1,6 +1,6 @@
 from fastapi import APIRouter
-from services.slack_service import send_slack_alert
-from routers.metrics import run_metrics
+from api.services.slack_service import send_slack_alert
+from api.routers.metrics import run_metrics
 
 router = APIRouter()
 
